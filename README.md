@@ -7,10 +7,14 @@ Fork and clone this repo. On your fork, answer and commit the follow questions. 
 You are given a string stored in variable `problem`. Write code so that you print each word of the string on a new line.
 
 ```swift
+
 var problem = "split this string into words and print them on separate lines"
 
-// Your code
-```
+var problem2 = problem.components(separatedBy: " ")
+
+for i in problem2 {
+print (String(i))
+}
 
 Example
 
@@ -40,8 +44,10 @@ Given a string `testString` create a new variable called `condensedString` that 
 ```swift
 let testString = "  How   about      thesespaces  ?  "
 //condensedString = " How about thesespaces ? "
-```
 
+et condensedString = aString.replacingOccurrences (of: "  ", with: " ", options: .literal, range: nil)
+```
+l
 
 ## Question 3
 
@@ -52,7 +58,18 @@ Example:
 Sample Input: `"Swift is the best language"`
 
 Sample Output: `"language best the is Swift"`
+```
+var question3 = "Swift is the best launguage"
 
+var words = question3.split(separator: " ")
+
+print(words)
+
+for _ in words {
+words.reverse()
+}
+print(words)
+```
 
 ## Question 4
 
@@ -64,6 +81,20 @@ Sample Input: `"danaerys dad cat civic bottle"`
 
 Sample Output: `2`
 
+```
+
+var question4 = "danaerys dad cat civic bottle"
+
+var words = question4.split(separator: " ")
+var palindromes = 0
+
+for i in words {
+if String(i.reversed()) == String(i) {
+palindromes += 1
+}
+}
+print(palindromes)
+```
 
 ## Question 5
 
@@ -82,6 +113,23 @@ Example:
 Sample Input: `"PPALLP"`
 
 Sample Output: `true`
+```
+let attendance = "PPALLP"
+var howManyAs = ""
+var howManyLs = "LLL"
+
+for i in attendance{
+if i == "A"{
+howManyAs += String(i)
+}
+}
+if howManyAs.count > 1 || howManyLs.contains(howManyLs)  {
+print (false)
+}else {
+print (true)
+}
+
+```
 
 
 ## Question 6
@@ -99,3 +147,26 @@ Sample Output1: `False`
 Sample Input2: `("aa", "aab")`
 
 Sample Output2: `True`
+
+***
+```
+var aTuple = ("magazineLetters", "ransomNote")
+var aBool = false
+var count = 0
+
+for i in aTuple.0 { //h, i
+for j in aTuple.1 { //i
+if j == i {
+count += 1
+continue
+} else {
+continue
+}
+}
+}
+if count == (aTuple.0).count {
+aBool = true
+}
+
+print(aBool)
+```
